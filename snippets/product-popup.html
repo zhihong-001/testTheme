@@ -1,0 +1,16 @@
+<modal-opener class="product-popup-modal__opener" data-modal="#PopupModal-{{id}}">
+  <button id="ProductPopup-{{id}}" class="product-popup-modal__button button button--link">
+    {{default settings.text settings.page.title}}
+  </button>
+</modal-opener>
+<modal-dialog id="PopupModal-{{id}}" class="product-popup-modal">
+  <div class="product-popup-modal__content">    
+    <button id="ModalClose-{{id}}" class="product-popup-modal__toggle">
+      {{snippet "icon-close"}}
+    </button>
+    <div class="product-popup-modal__content-info">
+      <h4 class="h4">{{settings.page.title}}</h4>
+      {{{settings.page.content}}}
+    </div>
+  </div>
+</modal-dialog>

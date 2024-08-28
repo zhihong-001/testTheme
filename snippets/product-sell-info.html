@@ -1,0 +1,33 @@
+{{ assign "salesIndexArr" (split "1,2,3,4" "," )}}
+
+<div class="product-sell-info" id="product-sell-info_{{id}}">
+  {{#for salesIndexArr as |index|}}
+    {{#if (trim (get (append 'product_sales_point_' index) settings)) }}
+      <div class="product-sell-box">
+        <div class="product-sell-icon">
+          {{#if (get (append 'product_sales_point_' index '_icon') settings) == 'checkmark'}}
+            {{snippet 'icon-sell-checkmark' }}
+          {{/if}}
+          {{#if (get (append 'product_sales_point_' index '_icon') settings) == 'globe'}}
+            {{snippet 'icon-sell-globe' }}
+          {{/if}}
+          {{#if (get (append 'product_sales_point_' index '_icon') settings) == 'leaf'}}
+            {{snippet 'icon-sell-leaf' }}
+          {{/if}}
+          {{#if (get (append 'product_sales_point_' index '_icon') settings) == 'lock'}}
+            {{snippet 'icon-sell-lock' }}
+          {{/if}}
+          {{#if (get (append 'product_sales_point_' index '_icon') settings) == 'package'}}
+            {{snippet 'icon-sell-package' }}
+          {{/if}}
+          {{#if (get (append 'product_sales_point_' index '_icon') settings) == 'truck'}}
+            {{snippet 'icon-sell-truck' }}
+          {{/if}}
+        </div>
+        <div class="product-sell-text body3">
+          {{ get (append 'product_sales_point_' index) settings }}
+        </div>
+      </div>
+    {{/if}}
+  {{/for}}
+</div>

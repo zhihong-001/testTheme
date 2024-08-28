@@ -1,0 +1,37 @@
+{{#comment}}
+     Render header icons
+
+    Accepts:
+    - show_user_entry: {Boolean}
+    - show_cart_entry: {Boolean}
+    - menu: {Object} menu
+    - mobile_menu: {Object} mobile menu
+
+    Usage:
+    {{snippet
+      "header-icons"
+      show_user_entry=section.settings.show_user_entry
+      show_cart_entry=section.settings.show_cart_entry
+      menu=main_menu
+    }}
+{{/comment}}
+
+<div class="header__icons">
+  {{#if show_user_entry}}
+    <a class="icon-button header__icon-button display-none display-flex-desktop" href="{{#if customer }}{{ routes.account_url }}{{else}}{{ routes.account_login_url }}{{/if}}">
+      {{snippet 'icon-user'}}
+    </a>
+  {{/if}}
+
+  
+  <a id="cart-icon-bubble" class="icon-button header__icon-button {{#if (isFalsey show_cart_entry)}}display-none{{/if}}" href="{{ routes.cart_url }}">
+    {{snippet 'cart-icon-bubble'}}
+  </a>
+
+  {{snippet
+    "header-menu-drawer"
+    show_user_entry=show_user_entry
+    menu=menu
+    class="display-none-desktop"
+  }}
+</div>

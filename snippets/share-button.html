@@ -1,0 +1,39 @@
+{{#comment}}
+  Renders share button.
+  Accepts:
+  - share_link: {String} url to be added to the input the user will get/copy.
+  Usage:
+   {{snippet "share-button" share_link=share_url}}
+{{/comment}}
+
+<script src="{{asset_url 'component-share-button.js'}}" defer></script>
+{{snippet "stylesheet" href=(asset_url "component-share-button.css")}}
+
+<div class="share-button__container">
+  <share-button id="Share-{{section.id}}" class="share-button quick-add-hidden" {{{block.shopline_attributes}}}>
+    <details id="Details-{{block.id}}-{{section.id}}">
+      <summary class="share-button__button body6">
+        {{snippet "icon-shared"}}
+        {{t 'products.product_details.share_button_text'}}
+      </summary>
+      <div id="Product-share-{{section.id}}" class="share-button__fallback motion-reduce">
+        <div
+          class="share-button__link body3"
+          data-succuess_text="{{t 'products.product_details.copy_success_text'}}"
+          data-copy_text="{{share_link}}"
+        >
+          {{share_link}}
+        </div>
+        <button class="share-button__close">
+          {{snippet "icon-close"}}
+        </button>
+        <button class="share-button__copy button">
+          {{t 'products.product_details.copy_button_text'}}
+        </button>
+        <button class="share-button__copy-succuess button button--secondary display-none">
+          {{snippet "icon-check"}}
+        </button>
+      </div>
+    </details>
+  </share-button>
+</div>

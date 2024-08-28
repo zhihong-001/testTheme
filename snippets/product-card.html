@@ -1,0 +1,191 @@
+{{#comment}}
+  Renders a product card
+
+  Accepts:
+  - product_data: {Object} Product Item object (optional)
+  - show_secondary_image: {Boolean} Show the secondary image on hover. Default: false (optional)
+  - mobile_show_secondary_image: {Boolean} Show the secondary image on mobile hover. Default: false (optional)
+  - section_id: {String} The ID of the section that contains this card.
+  - image_ratio: {String} Size of the product image card. Default: 100
+  - image_fill_type {String} Product image filling method
+  - show_quick_add: {Boolean} Show the quick add button.
+  - desktop_grid_cols: {Number}
+  - mobile_grid_cols: {Number}
+  - lazy_load: {Boolean} Image should be lazy loaded.
+  - theme_settings: {Object} theme settings
+  - position: {String} determines the position of the product image card
+  - image_shape: {'square'|'round'} Image shape. Default: square (optional)
+
+  Usage:
+  {{ snippet 'product-card' }}
+{{/comment}}
+
+
+
+
+
+
+
+{{assign "card_style" theme_settings.product_card_style}}
+{{assign "card_image_padding" theme_settings.product_card_image_padding}}
+{{assign "card_content_align" theme_settings.product_card_content_align}}
+{{assign "color_card_background" theme_settings.color_card_background}}
+{{assign "color_card_text" theme_settings.color_card_text}}
+{{#capture "card_background_color"}}
+  {{~#if color_card_background~}}
+    {{ theme_settings.color_card_background.red }}, {{ theme_settings.color_card_background.green }}, {{theme_settings.color_card_background.blue }}
+  {{~else~}}
+    {{ theme_settings.color_image_background.red }}, {{ theme_settings.color_image_background.green }}, {{theme_settings.color_image_background.blue }}
+  {{~/if~}}
+{{/capture}}
+{{#capture "card_text_color"}}
+  {{~#if color_card_text~}}
+    {{ theme_settings.color_card_text.red }}, {{ theme_settings.color_card_text.green }}, {{theme_settings.color_card_text.blue }}
+  {{~else~}}
+    {{ theme_settings.color_text.red }}, {{ theme_settings.color_text.green }}, {{theme_settings.color_text.blue }}
+  {{~/if~}}
+{{/capture}}
+
+{{assign 'image_ratio' (default image_ratio 100) }}
+
+{{#if image_ratio == 'adapt' and product_data.featured_media}}
+  {{assign 'image_ratio' (ternary product_data.featured_media.aspect_ratio (divide 100 product_data.featured_media.aspect_ratio) 100)}}
+{{else if image_ratio == 'adapt'}}
+  
+  {{assign 'image_ratio' 100}}
+{{/if}}
+
+
+{{#unless product_data}}
+  {{assign 'image_ratio' 100}}
+{{/unless}}
+
+{{assign "image_round" (if image_shape == "round")}}
+{{#if image_round}}
+  {{assign "image_ratio" "100"}}
+{{/if}}
+
+{{assign 'jump_link' product_data.url}}
+
+<div 
+  class="product-card-wrapper card card-wrapper product-card-style-{{card_style}} 
+  {{#if card_style == 'card'}} global-product-card-border-shadow{{/if}}" 
+  style="--card-image-padding: {{card_image_padding}}px; 
+  --color-card-background: {{card_background_color}};
+  --color-card-text: {{card_text_color}};"
+  {{{shopline_attributes}}}
+>
+  <a {{#if jump_link}}href="{{ jump_link }}"{{else}}href="javascript:;"{{/if}}>
+    <div 
+      class="card__inner--wrapper {{#if card_style != 'card'}}global-product-card-border-shadow{{/if}} {{#if image_round}}card__visible{{/if}}"
+      style="{{#if image_round}}--product-card-border-radius:50%;{{/if}}"
+    >
+      <div class="card__inner ratio {{#if image_round}}card__inner--round{{/if}}" 
+        style="--ratio-percent: {{ image_ratio }}%; 
+        --image-fill-type: {{image_fill_type}};
+        --badge-border-radius: {{theme_settings.product_discount_radius}}px;
+        --image-object-position:{{position}};"
+      >
+        <div class="card__media
+          {{#if show_secondary_image}}media--hover-effect{{/if}}
+          {{#if mobile_show_secondary_image}}mobile--media--hover-effect{{/if}}"
+        >
+          {{#if product_data.featured_media}}
+            {{snippet 'image' data=product_data.featured_media lazy=lazy_load pc_size=(append '1/' desktop_grid_cols ) mobile_size=(append '1/' mobile_grid_cols ) class="collection-hero__image"}}
+            {{#if product_data.media.[1] and show_secondary_image or mobile_show_secondary_image}}
+              {{snippet 'image' data=product_data.media.[1] lazy=true pc_size=(append '1/' desktop_grid_cols ) mobile_size=(append '1/' mobile_grid_cols ) class="collection-hero__image"}}
+            {{/if}}
+          {{else}}
+          
+          <div class="placeholder">
+          {{placeholder_svg_tag 'image'}}
+          </div>
+          {{/if}}
+        </div>
+        <div class="card__badge {{theme_settings.product_discount_position}} {{#unless product_data.available}}sold-out-message{{/unless}}">
+          {{~#unless product_data.available}}
+            <span class=" body4 fw-bold">
+              {{t 'transaction.item.sold_out'}}
+            </span>
+          {{/unless ~}}
+          {{~#if product_data.available and product_data.compare_at_price > product_data.price and theme_settings.product_discount}}
+            <span class=" body4 fw-bold">
+              {{t 'products.product_list.save'}}
+            </span>
+          {{/if ~}}
+        </div>
+        {{#if show_quick_add and product_data and product_data.available}}
+          <div class="quick-add hover-effect-container">
+            {{ assign 'product_form_id' (append 'quick-add-' section_id '__' product_data.id) }}
+            {{#if (length product_data.variants) == 1}}
+            <product-form>
+              {{#form "product" product_data id=product_form_id}}
+                <input
+                  type="hidden"
+                  name="id"
+                  value="{{ product_data.first_available_variant.id }}"
+                >
+                <input type="hidden" required name="quantity" value='1'/>
+                <button
+                  id="{{ product_form_id }}-submit"
+                  type="submit"
+                  class="quick-add__submit hover-effect-target"
+                  data-sold-out-message="true"
+                  {{#unless product_data.first_available_variant.available }}
+                    disabled
+                  {{/unless}}
+                >
+                {{snippet 'icon-cart'}}
+                {{snippet "loading-overlay-spinner"}}
+                </button>
+              {{/form}}
+            </product-form>
+            {{else}}
+            <modal-opener data-modal="#QuickAdd-{{ product_data.id }}">
+              <button
+                id="{{ product_form_id }}-submit"
+                type="submit"
+                name="add"
+                class="quick-add__submit hover-effect-target"
+                data-product-url="{{ product_data.url }}"
+              >
+                {{snippet 'icon-cart'}}
+                {{snippet "loading-overlay-spinner"}}
+              </button>
+            </modal-opener>
+            {{/if}}
+          </div>
+        {{/if}}
+      </div>
+    </div>
+    <div class="card__content {{#if card_content_align == "center"}}text-center{{/if}}">
+      <h3 class="product__title body3 {{theme_settings.product_title_show_type}} {{#unless theme_settings.product_mobile_title_show}}display-none-tablet{{/unless}} {{#unless theme_settings.product_pc_title_show}}display-none-desktop{{/unless}}">
+      {{#if product_data}}
+        {{product_data.title}}
+      {{else}}
+        {{t 'onboarding.product_title'}}
+      {{/if}}
+      </h3>
+      {{snippet 'price' product=product_data}}
+    </div>
+  </a>
+  {{#if show_quick_add and (gt (length product_data.variants) 1) }}
+    <quick-add-modal id="QuickAdd-{{ product_data.id }}">
+      <details>
+        <summary class="display-none"></summary>
+        <div class="modal__overlay"></div>
+        <div class="modal__content quick-add-modal__content">
+        <button
+            id="ModalClose-{{ product_data.id }}"
+            type="button"
+            class="quick-add-modal__toggle"
+            name="close"
+        >
+            {{ snippet 'icon-close' }}
+        </button>
+        <div id="QuickAddInfo-{{ product_data.id }}" class="quick-add-modal__content-info"></div>
+        </div>
+      </details>
+    </quick-add-modal>
+  {{/if}}
+</div>

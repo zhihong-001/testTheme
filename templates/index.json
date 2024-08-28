@@ -1,0 +1,1231 @@
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "settings": {
+        "section_height": "natural",
+        "mobile_height": "natural",
+        "style": "dots",
+        "autoplay": true,
+        "autoplay_speed": 7
+      },
+      "blocks": {
+        "block-1": {
+          "type": "image",
+          "icon": "image",
+          "settings": {
+            "image": {},
+            "image_mobile": {},
+            "overlay_opacity": 0,
+            "pc_text_position": "center flex-end",
+            "pc_text_align": "center",
+            "mobile_text_align": "center",
+            "title": "Two Line\nTitle Slide",
+            "title_size": 70,
+            "sub_title": "",
+            "subheading": "And optional subtext",
+            "link_text": "Shop this",
+            "is_profile_link": false,
+            "link_text_2": "Shop all",
+            "is_profile_link2": false
+          }
+        },
+        "block-2": {
+          "type": "image",
+          "icon": "image",
+          "settings": {
+            "image": {},
+            "image_mobile": {},
+            "overlay_opacity": 0,
+            "pc_text_position": "center flex-end",
+            "pc_text_align": "center",
+            "mobile_text_align": "center",
+            "title": "Two Line\nTitle Slide",
+            "title_size": 70,
+            "sub_title": "",
+            "subheading": "And optional subtext",
+            "link_text": "Shop this",
+            "is_profile_link": false,
+            "link_text_2": "Shop all",
+            "is_profile_link2": false
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2"
+      ],
+      "disabled": false
+    },
+    "collection-list": {
+      "disabled": false,
+      "type": "collection-list",
+      "settings": {
+        "title": "Collection list",
+        "collection_image_ratio": "100",
+        "color_scheme": "none",
+        "slice_in_mobile": true,
+        "slice_in_pc": false,
+        "button_text": "View all",
+        "desktop_grid_cols": 3,
+        "m_cols": 1,
+        "padding_top": 80,
+        "padding_bottom": 40
+      },
+      "blocks": {
+        "collection-item-1": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "image_display_area": "center center",
+            "category": null
+          }
+        },
+        "collection-item-2": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "image_display_area": "center center",
+            "category": null
+          }
+        },
+        "collection-item-3": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "image_display_area": "center center",
+            "category": null
+          }
+        }
+      },
+      "block_order": [
+        "collection-item-1",
+        "collection-item-2",
+        "collection-item-3"
+      ]
+    },
+    "featured-collection": {
+      "disabled": false,
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured collection",
+        "heading_size": "title3",
+        "show_description": false,
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "columns_mobile": 2,
+        "enable_desktop_slider": false,
+        "enable_mobile_slider": false,
+        "button_text": "View all",
+        "product_image_ratio": "150",
+        "show_secondary_image": false,
+        "enable_quick_add": false,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "page_style": "number",
+        "collection": null
+      },
+      "blocks": {}
+    },
+    "multi-media-splicing": {
+      "disabled": false,
+      "type": "multi-media-splicing",
+      "settings": {
+        "title_size": "title3",
+        "desktop_layout": "left",
+        "mobile_layout": "splicing",
+        "color_scheme": "none",
+        "padding_top": 40,
+        "padding_bottom": 40
+      },
+      "blocks": {
+        "block-1": {
+          "type": "video",
+          "settings": {
+            "video_alt": "Describe the video",
+            "image_padding": "cover"
+          }
+        },
+        "block-2": {
+          "type": "product",
+          "settings": {
+            "product_hover_show_next": false,
+            "image_padding": "cover",
+            "product": ""
+          }
+        },
+        "block-3": {
+          "type": "collection",
+          "settings": {
+            "image_padding": "cover",
+            "category": ""
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2",
+        "block-3"
+      ]
+    },
+    "rich-text": {
+      "disabled": false,
+      "type": "rich-text",
+      "settings": {
+        "desktop_content_position": "center",
+        "color_scheme": "none",
+        "normal_width": false,
+        "padding_top": 80,
+        "padding_bottom": 80
+      },
+      "blocks": {
+        "block-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "heading",
+            "heading_size": "title3"
+          }
+        },
+        "block-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A sentence or two introducing your brand, what you sell, and what makes your brand compelling to customers.</p>"
+          }
+        },
+        "block-3": {
+          "type": "button",
+          "settings": {
+            "button_text": "Button",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_text_2": "Button 2",
+            "button_link_2": "",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2",
+        "block-3"
+      ]
+    },
+    "video": {
+      "disabled": false,
+      "type": "video",
+      "settings": {
+        "title": "",
+        "title_size": "title3",
+        "external_video": "",
+        "video_auto_play": false,
+        "video_loop": false,
+        "full_width": true,
+        "color_scheme": "none",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "cover": {
+          "url": ""
+        },
+        "internal_video": ""
+      },
+      "blocks": {}
+    },
+    "blog": {
+      "disabled": false,
+      "type": "blog",
+      "settings": {
+        "title": "Blogs",
+        "blog_collection_id": "",
+        "title_font_size": "title3",
+        "limit": 3,
+        "pc_cols": 3,
+        "is_show_date": true,
+        "is_show_author": true,
+        "is_show_cover": true,
+        "is_show_desc": true,
+        "btn_text": "View all",
+        "color_scheme": "none",
+        "padding_top": 80,
+        "padding_bottom": 40
+      },
+      "blocks": {}
+    },
+    "sign-up-and-save": {
+      "disabled": false,
+      "type": "sign-up-and-save",
+      "settings": {
+        "full_screen_width": true,
+        "color_scheme": "none",
+        "padding_top": 40,
+        "padding_bottom": 80
+      },
+      "blocks": {
+        "block-1": {
+          "type": "title",
+          "settings": {
+            "title": "Sign up and save",
+            "fontSize": "title3"
+          }
+        },
+        "block-2": {
+          "type": "desc",
+          "settings": {
+            "description": "Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals."
+          }
+        },
+        "block-3": {
+          "type": "button",
+          "settings": {
+            "button_text": "Subscribe",
+            "placeholder": "Enter your email"
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2",
+        "block-3"
+      ]
+    },
+    "1721378918370161191a": {
+      "disabled": false,
+      "type": "shopline://apps/高阶组件库/sections/product-category-list/01405986-ae6f-4fcc-adaa-2a21f14efc9f",
+      "settings": {
+        "tab_style": "underline",
+        "tab_color": "#000000",
+        "tab_button_bg_color": "#ffffff",
+        "tab_button_text_color": "#000000",
+        "pc_show": true,
+        "mb_show": true,
+        "products_num": 4,
+        "pc_cols": 4,
+        "sticky": true,
+        "slice_in_pc": true,
+        "mb_layout": 3,
+        "tab_text_align": "center",
+        "text_align": "center",
+        "button_text": "Optional Button",
+        "image_ratio": "133.33",
+        "product_fill_type": "contain",
+        "product_hover_show_next": false,
+        "product_title_show_type": "full_display",
+        "product_add_to_cart": true,
+        "mobile_quick_add_btn_style": "button",
+        "quick_add_btn_background": "#000000",
+        "quick_add_btn_font_color": "#FFFFFF",
+        "product_mobile_title_show": true,
+        "product_discount": true,
+        "product_discount_style": "number",
+        "product_discount_position": "left_bottom",
+        "product_discount_radius": 2,
+        "image_width": "50%",
+        "show_touch": false,
+        "horizontal_spacing": 40,
+        "vertical_spacing": 0,
+        "container_bg_color": "#FFFFFF",
+        "grid_horizontal_space": 20,
+        "edges": "rounded",
+        "product_grid_image_margin": "0",
+        "superscript_decimals": false,
+        "color_entry_line": "#EAECEC",
+        "color_page_background": "#FFFCFA",
+        "color_text": "#29252C",
+        "color_sale": "#171F2B",
+        "color_light_text": "#949494",
+        "color_tag_text": "#ffffff",
+        "color_tag_background": "#C20000",
+        "soldOut_color_tag_text": "#000000",
+        "soldOut_color_tag_background": "#ffffff",
+        "color_btn_text": "#ffffff",
+        "color_image_background": "#ffffff",
+        "card_border_thickness": 0,
+        "card_border_radius": 0,
+        "card_color": "#fff",
+        "card_style": true,
+        "container_max_width": 1420,
+        "container_config": {
+          "pc": {
+            "left": 40,
+            "right": 40,
+            "top": 60,
+            "bottom": 60
+          },
+          "mobile": {
+            "left": 20,
+            "right": 20,
+            "top": 40,
+            "bottom": 40
+          }
+        },
+        "container_margin_config": {
+          "pc": {
+            "left": 40,
+            "right": 40,
+            "top": 0,
+            "bottom": 0
+          },
+          "mobile": {
+            "left": 0,
+            "right": 0,
+            "top": 0,
+            "bottom": 0
+          }
+        },
+        "title_font_family": "Poppins:600",
+        "title_font_color": "#000000",
+        "title_pc_font_size": 26,
+        "title_m_font_size": 20,
+        "title_letter_spacing": 0,
+        "title_line_height": 1,
+        "product_title_font_family": "PingFang SC:400",
+        "product_title_color": "#000000",
+        "product_title_pc_font_size": 16,
+        "product_title_m_font_size": 12,
+        "product_title_letter_spacing": 0,
+        "product_title_pc_line_height": 1.6,
+        "product_title_m_line_height": 1.6,
+        "btn_font_family": "Montserrat:500",
+        "btn_font_color": "#FFFFFF",
+        "btn_pc_font_size": 13,
+        "btn_m_font_size": 12,
+        "btn_letter_spacing": 0,
+        "btn_line_height": 1.6,
+        "btn_background": "#111111",
+        "btn_style": "primary",
+        "btn_hover_animation": "1",
+        "btn_border_thickness": 1,
+        "btn_border_opacity": 100,
+        "btn_border_radius": 0,
+        "btn_border_color": "#111111",
+        "btn_shadow_opacity": 0,
+        "btn_shadow_offset_x": 0,
+        "btn_shadow_offset_y": 4,
+        "btn_shadow_blur": 5,
+        "btn_shadow_color": "#000000",
+        "product_price_pc_font_family": "PingFang SC:600",
+        "product_price_m_font_family": "PingFang SC:500",
+        "product_price_color": "#1A1C1E",
+        "product_price_pc_font_size": 16,
+        "product_price_m_font_size": 14,
+        "product_price_letter_spacing": 0,
+        "product_price_pc_line_height": 1.6,
+        "product_price_m_line_height": 1.6,
+        "product_underlined_price_pc_font_family": "PingFang SC:600",
+        "product_underlined_price_m_font_family": "PingFang SC:500",
+        "product_underlined_price_color": "#000000",
+        "product_underlined_price_pc_font_size": 16,
+        "product_underlined_price_m_font_size": 12,
+        "product_underlined_price_letter_spacing": 0,
+        "product_underlined_price_pc_line_height": 1.6,
+        "product_underlined_price_m_line_height": 1.6,
+        "product_card_border_thickness": 0,
+        "product_card_border_opacity": 10,
+        "product_card_border_radius": 0,
+        "product_card_border_color": "#000000",
+        "product_card_shadow_opacity": 0,
+        "product_card_shadow_offset_x": 0,
+        "product_card_shadow_offset_y": 4,
+        "product_card_shadow_blur": 5,
+        "product_card_shadow_color": "#000000"
+      },
+      "blocks": {
+        "1721378918371ad84fa9": {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "category_id": "",
+            "title": "Tab tittle"
+          },
+          "blockId": "1721378918371ad84fa9"
+        },
+        "172137891837170bc777": {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "category_id": "",
+            "title": "Tab tittle"
+          },
+          "blockId": "172137891837170bc777"
+        },
+        "17213789183718f2682b": {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "category_id": "",
+            "title": "Tab tittle"
+          },
+          "blockId": "17213789183718f2682b"
+        },
+        "1721378918371e606b95": {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "category_id": "",
+            "title": "Tab tittle"
+          },
+          "blockId": "1721378918371e606b95"
+        }
+      },
+      "block_order": [
+        "1721378918371ad84fa9",
+        "172137891837170bc777",
+        "17213789183718f2682b",
+        "1721378918371e606b95"
+      ]
+    },
+    "1721378921046f7c4ecd": {
+      "disabled": false,
+      "type": "shopline://apps/高阶组件库/sections/product-category-list/01405986-ae6f-4fcc-adaa-2a21f14efc9f",
+      "settings": {
+        "tab_style": "underline",
+        "tab_color": "#000000",
+        "tab_button_bg_color": "#ffffff",
+        "tab_button_text_color": "#000000",
+        "pc_show": true,
+        "mb_show": true,
+        "products_num": 4,
+        "pc_cols": 4,
+        "sticky": true,
+        "slice_in_pc": true,
+        "mb_layout": 3,
+        "tab_text_align": "center",
+        "text_align": "center",
+        "button_text": "Optional Button",
+        "image_ratio": "133.33",
+        "product_fill_type": "contain",
+        "product_hover_show_next": false,
+        "product_title_show_type": "full_display",
+        "product_add_to_cart": true,
+        "mobile_quick_add_btn_style": "button",
+        "quick_add_btn_background": "#000000",
+        "quick_add_btn_font_color": "#FFFFFF",
+        "product_mobile_title_show": true,
+        "product_discount": true,
+        "product_discount_style": "number",
+        "product_discount_position": "left_bottom",
+        "product_discount_radius": 2,
+        "image_width": "50%",
+        "show_touch": false,
+        "horizontal_spacing": 40,
+        "vertical_spacing": 0,
+        "container_bg_color": "#FFFFFF",
+        "grid_horizontal_space": 20,
+        "edges": "rounded",
+        "product_grid_image_margin": "0",
+        "superscript_decimals": false,
+        "color_entry_line": "#EAECEC",
+        "color_page_background": "#FFFCFA",
+        "color_text": "#29252C",
+        "color_sale": "#171F2B",
+        "color_light_text": "#949494",
+        "color_tag_text": "#ffffff",
+        "color_tag_background": "#C20000",
+        "soldOut_color_tag_text": "#000000",
+        "soldOut_color_tag_background": "#ffffff",
+        "color_btn_text": "#ffffff",
+        "color_image_background": "#ffffff",
+        "card_border_thickness": 0,
+        "card_border_radius": 0,
+        "card_color": "#fff",
+        "card_style": true,
+        "container_max_width": 1420,
+        "container_config": {
+          "pc": {
+            "left": 40,
+            "right": 40,
+            "top": 60,
+            "bottom": 60
+          },
+          "mobile": {
+            "left": 20,
+            "right": 20,
+            "top": 40,
+            "bottom": 40
+          }
+        },
+        "container_margin_config": {
+          "pc": {
+            "left": 40,
+            "right": 40,
+            "top": 0,
+            "bottom": 0
+          },
+          "mobile": {
+            "left": 0,
+            "right": 0,
+            "top": 0,
+            "bottom": 0
+          }
+        },
+        "title_font_family": "Poppins:600",
+        "title_font_color": "#000000",
+        "title_pc_font_size": 26,
+        "title_m_font_size": 20,
+        "title_letter_spacing": 0,
+        "title_line_height": 1,
+        "product_title_font_family": "PingFang SC:400",
+        "product_title_color": "#000000",
+        "product_title_pc_font_size": 16,
+        "product_title_m_font_size": 12,
+        "product_title_letter_spacing": 0,
+        "product_title_pc_line_height": 1.6,
+        "product_title_m_line_height": 1.6,
+        "btn_font_family": "Montserrat:500",
+        "btn_font_color": "#FFFFFF",
+        "btn_pc_font_size": 13,
+        "btn_m_font_size": 12,
+        "btn_letter_spacing": 0,
+        "btn_line_height": 1.6,
+        "btn_background": "#111111",
+        "btn_style": "primary",
+        "btn_hover_animation": "1",
+        "btn_border_thickness": 1,
+        "btn_border_opacity": 100,
+        "btn_border_radius": 0,
+        "btn_border_color": "#111111",
+        "btn_shadow_opacity": 0,
+        "btn_shadow_offset_x": 0,
+        "btn_shadow_offset_y": 4,
+        "btn_shadow_blur": 5,
+        "btn_shadow_color": "#000000",
+        "product_price_pc_font_family": "PingFang SC:600",
+        "product_price_m_font_family": "PingFang SC:500",
+        "product_price_color": "#1A1C1E",
+        "product_price_pc_font_size": 16,
+        "product_price_m_font_size": 14,
+        "product_price_letter_spacing": 0,
+        "product_price_pc_line_height": 1.6,
+        "product_price_m_line_height": 1.6,
+        "product_underlined_price_pc_font_family": "PingFang SC:600",
+        "product_underlined_price_m_font_family": "PingFang SC:500",
+        "product_underlined_price_color": "#000000",
+        "product_underlined_price_pc_font_size": 16,
+        "product_underlined_price_m_font_size": 12,
+        "product_underlined_price_letter_spacing": 0,
+        "product_underlined_price_pc_line_height": 1.6,
+        "product_underlined_price_m_line_height": 1.6,
+        "product_card_border_thickness": 0,
+        "product_card_border_opacity": 10,
+        "product_card_border_radius": 0,
+        "product_card_border_color": "#000000",
+        "product_card_shadow_opacity": 0,
+        "product_card_shadow_offset_x": 0,
+        "product_card_shadow_offset_y": 4,
+        "product_card_shadow_blur": 5,
+        "product_card_shadow_color": "#000000"
+      },
+      "blocks": {
+        "1721378918371ad84fa9": {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "category_id": "",
+            "title": "Tab tittle"
+          },
+          "blockId": "1721378918371ad84fa9"
+        },
+        "172137891837170bc777": {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "category_id": "",
+            "title": "Tab tittle"
+          },
+          "blockId": "172137891837170bc777"
+        },
+        "17213789183718f2682b": {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "category_id": "",
+            "title": "Tab tittle"
+          },
+          "blockId": "17213789183718f2682b"
+        },
+        "1721378918371e606b95": {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "category_id": "",
+            "title": "Tab tittle"
+          },
+          "blockId": "1721378918371e606b95"
+        }
+      },
+      "block_order": [
+        "1721378918371ad84fa9",
+        "172137891837170bc777",
+        "17213789183718f2682b",
+        "1721378918371e606b95"
+      ]
+    },
+    "17213789231617172309": {
+      "disabled": false,
+      "type": "shopline://apps/高阶组件库/sections/product-category-list/01405986-ae6f-4fcc-adaa-2a21f14efc9f",
+      "settings": {
+        "tab_style": "underline",
+        "tab_color": "#000000",
+        "tab_button_bg_color": "#ffffff",
+        "tab_button_text_color": "#000000",
+        "pc_show": true,
+        "mb_show": true,
+        "products_num": 4,
+        "pc_cols": 4,
+        "sticky": true,
+        "slice_in_pc": true,
+        "mb_layout": 3,
+        "tab_text_align": "center",
+        "text_align": "center",
+        "button_text": "Optional Button",
+        "image_ratio": "133.33",
+        "product_fill_type": "contain",
+        "product_hover_show_next": false,
+        "product_title_show_type": "full_display",
+        "product_add_to_cart": true,
+        "mobile_quick_add_btn_style": "button",
+        "quick_add_btn_background": "#000000",
+        "quick_add_btn_font_color": "#FFFFFF",
+        "product_mobile_title_show": true,
+        "product_discount": true,
+        "product_discount_style": "number",
+        "product_discount_position": "left_bottom",
+        "product_discount_radius": 2,
+        "image_width": "50%",
+        "show_touch": false,
+        "horizontal_spacing": 40,
+        "vertical_spacing": 0,
+        "container_bg_color": "#FFFFFF",
+        "grid_horizontal_space": 20,
+        "edges": "rounded",
+        "product_grid_image_margin": "0",
+        "superscript_decimals": false,
+        "color_entry_line": "#EAECEC",
+        "color_page_background": "#FFFCFA",
+        "color_text": "#29252C",
+        "color_sale": "#171F2B",
+        "color_light_text": "#949494",
+        "color_tag_text": "#ffffff",
+        "color_tag_background": "#C20000",
+        "soldOut_color_tag_text": "#000000",
+        "soldOut_color_tag_background": "#ffffff",
+        "color_btn_text": "#ffffff",
+        "color_image_background": "#ffffff",
+        "card_border_thickness": 0,
+        "card_border_radius": 0,
+        "card_color": "#fff",
+        "card_style": true,
+        "container_max_width": 1420,
+        "container_config": {
+          "pc": {
+            "left": 40,
+            "right": 40,
+            "top": 60,
+            "bottom": 60
+          },
+          "mobile": {
+            "left": 20,
+            "right": 20,
+            "top": 40,
+            "bottom": 40
+          }
+        },
+        "container_margin_config": {
+          "pc": {
+            "left": 40,
+            "right": 40,
+            "top": 0,
+            "bottom": 0
+          },
+          "mobile": {
+            "left": 0,
+            "right": 0,
+            "top": 0,
+            "bottom": 0
+          }
+        },
+        "title_font_family": "Poppins:600",
+        "title_font_color": "#000000",
+        "title_pc_font_size": 26,
+        "title_m_font_size": 20,
+        "title_letter_spacing": 0,
+        "title_line_height": 1,
+        "product_title_font_family": "PingFang SC:400",
+        "product_title_color": "#000000",
+        "product_title_pc_font_size": 16,
+        "product_title_m_font_size": 12,
+        "product_title_letter_spacing": 0,
+        "product_title_pc_line_height": 1.6,
+        "product_title_m_line_height": 1.6,
+        "btn_font_family": "Montserrat:500",
+        "btn_font_color": "#FFFFFF",
+        "btn_pc_font_size": 13,
+        "btn_m_font_size": 12,
+        "btn_letter_spacing": 0,
+        "btn_line_height": 1.6,
+        "btn_background": "#111111",
+        "btn_style": "primary",
+        "btn_hover_animation": "1",
+        "btn_border_thickness": 1,
+        "btn_border_opacity": 100,
+        "btn_border_radius": 0,
+        "btn_border_color": "#111111",
+        "btn_shadow_opacity": 0,
+        "btn_shadow_offset_x": 0,
+        "btn_shadow_offset_y": 4,
+        "btn_shadow_blur": 5,
+        "btn_shadow_color": "#000000",
+        "product_price_pc_font_family": "PingFang SC:600",
+        "product_price_m_font_family": "PingFang SC:500",
+        "product_price_color": "#1A1C1E",
+        "product_price_pc_font_size": 16,
+        "product_price_m_font_size": 14,
+        "product_price_letter_spacing": 0,
+        "product_price_pc_line_height": 1.6,
+        "product_price_m_line_height": 1.6,
+        "product_underlined_price_pc_font_family": "PingFang SC:600",
+        "product_underlined_price_m_font_family": "PingFang SC:500",
+        "product_underlined_price_color": "#000000",
+        "product_underlined_price_pc_font_size": 16,
+        "product_underlined_price_m_font_size": 12,
+        "product_underlined_price_letter_spacing": 0,
+        "product_underlined_price_pc_line_height": 1.6,
+        "product_underlined_price_m_line_height": 1.6,
+        "product_card_border_thickness": 0,
+        "product_card_border_opacity": 10,
+        "product_card_border_radius": 0,
+        "product_card_border_color": "#000000",
+        "product_card_shadow_opacity": 0,
+        "product_card_shadow_offset_x": 0,
+        "product_card_shadow_offset_y": 4,
+        "product_card_shadow_blur": 5,
+        "product_card_shadow_color": "#000000"
+      },
+      "blocks": {
+        "1721378918371ad84fa9": {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "category_id": "",
+            "title": "Tab tittle"
+          },
+          "blockId": "1721378918371ad84fa9"
+        },
+        "172137891837170bc777": {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "category_id": "",
+            "title": "Tab tittle"
+          },
+          "blockId": "172137891837170bc777"
+        },
+        "17213789183718f2682b": {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "category_id": "",
+            "title": "Tab tittle"
+          },
+          "blockId": "17213789183718f2682b"
+        },
+        "1721378918371e606b95": {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "category_id": "",
+            "title": "Tab tittle"
+          },
+          "blockId": "1721378918371e606b95"
+        }
+      },
+      "block_order": [
+        "1721378918371ad84fa9",
+        "172137891837170bc777",
+        "17213789183718f2682b",
+        "1721378918371e606b95"
+      ]
+    },
+    "172137892548092e1465": {
+      "disabled": false,
+      "type": "shopline://apps/高阶组件库/sections/product-category-list/01405986-ae6f-4fcc-adaa-2a21f14efc9f",
+      "settings": {
+        "tab_style": "underline",
+        "tab_color": "#000000",
+        "tab_button_bg_color": "#ffffff",
+        "tab_button_text_color": "#000000",
+        "pc_show": true,
+        "mb_show": true,
+        "products_num": 4,
+        "pc_cols": 4,
+        "sticky": true,
+        "slice_in_pc": true,
+        "mb_layout": 3,
+        "tab_text_align": "center",
+        "text_align": "center",
+        "button_text": "Optional Button",
+        "image_ratio": "133.33",
+        "product_fill_type": "contain",
+        "product_hover_show_next": false,
+        "product_title_show_type": "full_display",
+        "product_add_to_cart": true,
+        "mobile_quick_add_btn_style": "button",
+        "quick_add_btn_background": "#000000",
+        "quick_add_btn_font_color": "#FFFFFF",
+        "product_mobile_title_show": true,
+        "product_discount": true,
+        "product_discount_style": "number",
+        "product_discount_position": "left_bottom",
+        "product_discount_radius": 2,
+        "image_width": "50%",
+        "show_touch": false,
+        "horizontal_spacing": 40,
+        "vertical_spacing": 0,
+        "container_bg_color": "#FFFFFF",
+        "grid_horizontal_space": 20,
+        "edges": "rounded",
+        "product_grid_image_margin": "0",
+        "superscript_decimals": false,
+        "color_entry_line": "#EAECEC",
+        "color_page_background": "#FFFCFA",
+        "color_text": "#29252C",
+        "color_sale": "#171F2B",
+        "color_light_text": "#949494",
+        "color_tag_text": "#ffffff",
+        "color_tag_background": "#C20000",
+        "soldOut_color_tag_text": "#000000",
+        "soldOut_color_tag_background": "#ffffff",
+        "color_btn_text": "#ffffff",
+        "color_image_background": "#ffffff",
+        "card_border_thickness": 0,
+        "card_border_radius": 0,
+        "card_color": "#fff",
+        "card_style": true,
+        "container_max_width": 1420,
+        "container_config": {
+          "pc": {
+            "left": 40,
+            "right": 40,
+            "top": 60,
+            "bottom": 60
+          },
+          "mobile": {
+            "left": 20,
+            "right": 20,
+            "top": 40,
+            "bottom": 40
+          }
+        },
+        "container_margin_config": {
+          "pc": {
+            "left": 40,
+            "right": 40,
+            "top": 0,
+            "bottom": 0
+          },
+          "mobile": {
+            "left": 0,
+            "right": 0,
+            "top": 0,
+            "bottom": 0
+          }
+        },
+        "title_font_family": "Poppins:600",
+        "title_font_color": "#000000",
+        "title_pc_font_size": 26,
+        "title_m_font_size": 20,
+        "title_letter_spacing": 0,
+        "title_line_height": 1,
+        "product_title_font_family": "PingFang SC:400",
+        "product_title_color": "#000000",
+        "product_title_pc_font_size": 16,
+        "product_title_m_font_size": 12,
+        "product_title_letter_spacing": 0,
+        "product_title_pc_line_height": 1.6,
+        "product_title_m_line_height": 1.6,
+        "btn_font_family": "Montserrat:500",
+        "btn_font_color": "#FFFFFF",
+        "btn_pc_font_size": 13,
+        "btn_m_font_size": 12,
+        "btn_letter_spacing": 0,
+        "btn_line_height": 1.6,
+        "btn_background": "#111111",
+        "btn_style": "primary",
+        "btn_hover_animation": "1",
+        "btn_border_thickness": 1,
+        "btn_border_opacity": 100,
+        "btn_border_radius": 0,
+        "btn_border_color": "#111111",
+        "btn_shadow_opacity": 0,
+        "btn_shadow_offset_x": 0,
+        "btn_shadow_offset_y": 4,
+        "btn_shadow_blur": 5,
+        "btn_shadow_color": "#000000",
+        "product_price_pc_font_family": "PingFang SC:600",
+        "product_price_m_font_family": "PingFang SC:500",
+        "product_price_color": "#1A1C1E",
+        "product_price_pc_font_size": 16,
+        "product_price_m_font_size": 14,
+        "product_price_letter_spacing": 0,
+        "product_price_pc_line_height": 1.6,
+        "product_price_m_line_height": 1.6,
+        "product_underlined_price_pc_font_family": "PingFang SC:600",
+        "product_underlined_price_m_font_family": "PingFang SC:500",
+        "product_underlined_price_color": "#000000",
+        "product_underlined_price_pc_font_size": 16,
+        "product_underlined_price_m_font_size": 12,
+        "product_underlined_price_letter_spacing": 0,
+        "product_underlined_price_pc_line_height": 1.6,
+        "product_underlined_price_m_line_height": 1.6,
+        "product_card_border_thickness": 0,
+        "product_card_border_opacity": 10,
+        "product_card_border_radius": 0,
+        "product_card_border_color": "#000000",
+        "product_card_shadow_opacity": 0,
+        "product_card_shadow_offset_x": 0,
+        "product_card_shadow_offset_y": 4,
+        "product_card_shadow_blur": 5,
+        "product_card_shadow_color": "#000000"
+      },
+      "blocks": {
+        "1721378918371ad84fa9": {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "category_id": "",
+            "title": "Tab tittle"
+          },
+          "blockId": "1721378918371ad84fa9"
+        },
+        "172137891837170bc777": {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "category_id": "",
+            "title": "Tab tittle"
+          },
+          "blockId": "172137891837170bc777"
+        },
+        "17213789183718f2682b": {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "category_id": "",
+            "title": "Tab tittle"
+          },
+          "blockId": "17213789183718f2682b"
+        },
+        "1721378918371e606b95": {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "category_id": "",
+            "title": "Tab tittle"
+          },
+          "blockId": "1721378918371e606b95"
+        }
+      },
+      "block_order": [
+        "1721378918371ad84fa9",
+        "172137891837170bc777",
+        "17213789183718f2682b",
+        "1721378918371e606b95"
+      ]
+    },
+    "17213789279771061daf": {
+      "disabled": false,
+      "type": "shopline://apps/高阶组件库/sections/product-category-list/01405986-ae6f-4fcc-adaa-2a21f14efc9f",
+      "settings": {
+        "tab_style": "underline",
+        "tab_color": "#000000",
+        "tab_button_bg_color": "#ffffff",
+        "tab_button_text_color": "#000000",
+        "pc_show": true,
+        "mb_show": true,
+        "products_num": 4,
+        "pc_cols": 4,
+        "sticky": true,
+        "slice_in_pc": true,
+        "mb_layout": 3,
+        "tab_text_align": "center",
+        "text_align": "center",
+        "button_text": "Optional Button",
+        "image_ratio": "133.33",
+        "product_fill_type": "contain",
+        "product_hover_show_next": false,
+        "product_title_show_type": "full_display",
+        "product_add_to_cart": true,
+        "mobile_quick_add_btn_style": "button",
+        "quick_add_btn_background": "#000000",
+        "quick_add_btn_font_color": "#FFFFFF",
+        "product_mobile_title_show": true,
+        "product_discount": true,
+        "product_discount_style": "number",
+        "product_discount_position": "left_bottom",
+        "product_discount_radius": 2,
+        "image_width": "50%",
+        "show_touch": false,
+        "horizontal_spacing": 40,
+        "vertical_spacing": 0,
+        "container_bg_color": "#FFFFFF",
+        "grid_horizontal_space": 20,
+        "edges": "rounded",
+        "product_grid_image_margin": "0",
+        "superscript_decimals": false,
+        "color_entry_line": "#EAECEC",
+        "color_page_background": "#FFFCFA",
+        "color_text": "#29252C",
+        "color_sale": "#171F2B",
+        "color_light_text": "#949494",
+        "color_tag_text": "#ffffff",
+        "color_tag_background": "#C20000",
+        "soldOut_color_tag_text": "#000000",
+        "soldOut_color_tag_background": "#ffffff",
+        "color_btn_text": "#ffffff",
+        "color_image_background": "#ffffff",
+        "card_border_thickness": 0,
+        "card_border_radius": 0,
+        "card_color": "#fff",
+        "card_style": true,
+        "container_max_width": 1420,
+        "container_config": {
+          "pc": {
+            "left": 40,
+            "right": 40,
+            "top": 60,
+            "bottom": 60
+          },
+          "mobile": {
+            "left": 20,
+            "right": 20,
+            "top": 40,
+            "bottom": 40
+          }
+        },
+        "container_margin_config": {
+          "pc": {
+            "left": 40,
+            "right": 40,
+            "top": 0,
+            "bottom": 0
+          },
+          "mobile": {
+            "left": 0,
+            "right": 0,
+            "top": 0,
+            "bottom": 0
+          }
+        },
+        "title_font_family": "Poppins:600",
+        "title_font_color": "#000000",
+        "title_pc_font_size": 26,
+        "title_m_font_size": 20,
+        "title_letter_spacing": 0,
+        "title_line_height": 1,
+        "product_title_font_family": "PingFang SC:400",
+        "product_title_color": "#000000",
+        "product_title_pc_font_size": 16,
+        "product_title_m_font_size": 12,
+        "product_title_letter_spacing": 0,
+        "product_title_pc_line_height": 1.6,
+        "product_title_m_line_height": 1.6,
+        "btn_font_family": "Montserrat:500",
+        "btn_font_color": "#FFFFFF",
+        "btn_pc_font_size": 13,
+        "btn_m_font_size": 12,
+        "btn_letter_spacing": 0,
+        "btn_line_height": 1.6,
+        "btn_background": "#111111",
+        "btn_style": "primary",
+        "btn_hover_animation": "1",
+        "btn_border_thickness": 1,
+        "btn_border_opacity": 100,
+        "btn_border_radius": 0,
+        "btn_border_color": "#111111",
+        "btn_shadow_opacity": 0,
+        "btn_shadow_offset_x": 0,
+        "btn_shadow_offset_y": 4,
+        "btn_shadow_blur": 5,
+        "btn_shadow_color": "#000000",
+        "product_price_pc_font_family": "PingFang SC:600",
+        "product_price_m_font_family": "PingFang SC:500",
+        "product_price_color": "#1A1C1E",
+        "product_price_pc_font_size": 16,
+        "product_price_m_font_size": 14,
+        "product_price_letter_spacing": 0,
+        "product_price_pc_line_height": 1.6,
+        "product_price_m_line_height": 1.6,
+        "product_underlined_price_pc_font_family": "PingFang SC:600",
+        "product_underlined_price_m_font_family": "PingFang SC:500",
+        "product_underlined_price_color": "#000000",
+        "product_underlined_price_pc_font_size": 16,
+        "product_underlined_price_m_font_size": 12,
+        "product_underlined_price_letter_spacing": 0,
+        "product_underlined_price_pc_line_height": 1.6,
+        "product_underlined_price_m_line_height": 1.6,
+        "product_card_border_thickness": 0,
+        "product_card_border_opacity": 10,
+        "product_card_border_radius": 0,
+        "product_card_border_color": "#000000",
+        "product_card_shadow_opacity": 0,
+        "product_card_shadow_offset_x": 0,
+        "product_card_shadow_offset_y": 4,
+        "product_card_shadow_blur": 5,
+        "product_card_shadow_color": "#000000"
+      },
+      "blocks": {
+        "1721378918371ad84fa9": {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "category_id": "",
+            "title": "Tab tittle"
+          },
+          "blockId": "1721378918371ad84fa9"
+        },
+        "172137891837170bc777": {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "category_id": "",
+            "title": "Tab tittle"
+          },
+          "blockId": "172137891837170bc777"
+        },
+        "17213789183718f2682b": {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "category_id": "",
+            "title": "Tab tittle"
+          },
+          "blockId": "17213789183718f2682b"
+        },
+        "1721378918371e606b95": {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "category_id": "",
+            "title": "Tab tittle"
+          },
+          "blockId": "1721378918371e606b95"
+        }
+      },
+      "block_order": [
+        "1721378918371ad84fa9",
+        "172137891837170bc777",
+        "17213789183718f2682b",
+        "1721378918371e606b95"
+      ]
+    }
+  },
+  "order": [
+    "featured-collection",
+    "blog",
+    "1721378918370161191a",
+    "17213789231617172309",
+    "172137892548092e1465",
+    "17213789279771061daf",
+    "1721378921046f7c4ecd"
+  ]
+}

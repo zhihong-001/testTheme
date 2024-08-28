@@ -1,0 +1,87 @@
+{{#comment}}
+    Renders a product thumbnail with a modal-opener
+
+    Accepts:
+    - media: {Object} Product Media object
+    - media_count: {Number} Number of media objects
+    - desktop_layout: {String} Layout of the media for desktop.
+    - mobile_layout: {String} Layout of the media for mobile.
+    - loop: {Boolean} Enable video looping (optional)
+    - modal_id: {String} The product modal that will be shown by clicking the thumbnail
+    - media_width: {Float} The width percentage that the media column occupies on desktop.
+    - lazy_load: {Boolean} Image should be lazy loaded.
+    - image_quality: {Number} Image compression ratio (optional) default 80.
+
+    Usage:
+    {{ snippet 'product-thumbnail' }}
+{{/comment}}
+
+{{assign 'desktop_columns' 1}}
+{{#if desktop_layout == 'columns' and media_count > 1}}
+  {{assign 'desktop_columns' 2}}
+{{/if}}
+
+{{assign 'mobile_columns' 1}}
+{{#if mobile_layout == 'columns' and media_count > 1}}
+  {{assign 'mobile_columns' 2}}
+{{/if}}
+
+{{~#capture 'sizes'~}}
+  (min-width: {{ settings.page_width }}px) {{ round (divide (times (minus settings.page_width 100) media_width) desktop_columns) }}px, (min-width: 990px) calc({{ divide (times media_width 100) desktop_columns }}vw - 100px), calc(100vw / {{ mobile_columns }} - 40px)
+{{~/capture~}}
+
+<modal-opener class="product__modal-opener product__modal-opener--{{ media.media_type }}" data-modal="#ProductModal-{{ modal_id }}">
+  <span class="product__media-icon motion-reduce quick-add-hidden">
+    {{#case media.media_type}}
+      {{#when 'video' 'external_video'}}
+        {{snippet 'icon-play'}}
+      {{else}}
+        {{snippet 'icon-zoom'}}
+      {{/when}}
+    {{/case}}
+  </span>
+  {{#capture 'media_preview_image_aspect_ratio'}}
+    {{~#if media.preview_image.aspect_ratio~}}
+      {{ times (divide 1 media.preview_image.aspect_ratio) 100 }}%
+    {{~else~}}
+      100%
+    {{~/if~}}
+  {{/capture}}
+  <div class="product__media media media--transparent global-media-settings" style="padding-top: {{ media_preview_image_aspect_ratio }}">
+    {{snippet 'image' data=(default media.preview_image media) lazy=lazy_load sizes=sizes breakpoints='246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946' quality=image_quality}}
+  </div>
+  <button class="product__media-toggle quick-add-hidden" type="button" data-media-id="{{ media.id }}"></button>
+</modal-opener>
+
+{{#if (if media.media_type != 'image')}}
+  {{#capture 'media_image_aspect_ratio'}}
+    {{~#if media.aspect_ratio~}}
+      {{ times (divide 1 media.aspect_ratio) 100 }}%
+    {{~else~}}
+      100%
+    {{~/if~}}
+  {{/capture}}
+  <deferred-media class="deferred-media media media--transparent" style="padding-top: {{ media_image_aspect_ratio }}" data-media-id="{{ media.id }}">
+    <button id="Deferred-Poster-Modal-{{ media.id }}" class="deferred-media__poster" type="button">
+      <span class="deferred-media__poster-button auto-width motion-reduce">
+        {{snippet 'icon-play'}}
+      </span>
+      {{snippet 'image' data=(default media.preview_image media) class=image_class lazy=lazy_load breakpoints='246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946' quality=image_quality}}
+    </button>
+    <template>
+      {{#case media.media_type}}
+        {{#when 'external_video'}}
+          {{assign 'video_class' (append 'js-' media.host)}}
+          {{#if media.host 'youtube'}}
+            {{ external_video_tag (external_video_url media autoplay=true loop=loop playlist=media.external_id) class=video_class loading='lazy' frameborder="0" }}
+          {{else}}
+            {{ external_video_tag (external_video_url media autoplay=true loop=loop) class=video_class loading='lazy' frameborder="0" }}
+          {{/if}}
+        {{/when}}
+        {{#when 'video'}}
+          {{ video_tag media autoplay=true loop=loop controls=true preload='none' }}
+        {{/when}}
+      {{/case}}
+    </template>
+  </deferred-media>
+{{/if}}

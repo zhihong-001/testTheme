@@ -1,0 +1,17 @@
+.product-recommendations-title.large {
+  font-size: calc(var(--title4-font-size) * 1.2);
+}
+.product-recommendations-title.small {
+  font-size: calc(var(--title4-font-size) * 0.8);
+}
+.product-recommendations-title.medium {
+  font-size: calc(var(--title4-font-size) * 1);
+}
+
+/* The ipad end responds to the mobile end in vertical screen */
+
+/* @custom-media --tablet (max-width: 959px); */
+
+/* @custom-media --gt-mobile (min-width: 751px); */
+
+/* detectingScreen need to consider the configuration of the tablet */

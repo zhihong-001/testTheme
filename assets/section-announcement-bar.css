@@ -1,0 +1,151 @@
+.shopline-section-announcement-bar-sticky {
+  top: 0;
+  z-index: 10;
+  animation: modalSlideInTop 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+@media (min-width: 960px) {
+  .shopline-section-announcement-bar-sticky.sticky-pc {
+    position: sticky;
+  }
+}
+@media (max-width: 959px) {
+  .shopline-section-announcement-bar-sticky.sticky-mobile {
+    position: sticky;
+  }
+}
+.shopline-section-announcement-bar-sticky.sticky-always {
+  position: sticky;
+}
+#shopline-section-announcement-bar:not(
+    .shopline-section-announcement-bar-sticky
+  ) {
+  position: relative;
+  z-index: 10;
+}
+.announcement-bar--list {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.announcement-bar--list .announcement-bar--item {
+  width: 100%;
+}
+.announcement-bar--list.announcement-bar--compact {
+  flex-direction: row;
+}
+.announcement-bar--list.announcement-bar--compact .announcement-bar--item {
+  width: auto;
+  padding: 0px 10px;
+  flex: 1 1 auto;
+}
+.announcement-bar--item {
+  position: relative;
+}
+.announcement-bar--item.division_bottom:after {
+  background-color: rgba(var(--color-entry-line));
+  bottom: 0;
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+.announcement--text {
+  display: inline-block;
+  position: relative;
+}
+.announcement--text .announcement__link {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.announcement-bar__slider {
+  text-align: center;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  height: auto;
+}
+.announcement-bar__slider .announcement-bar__slide {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
+}
+@media (min-width: 960px) {
+  .announcement-bar__slider .announcement-bar__slide.social-media--show {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+}
+.announcement-bar__slider.announcement-bar__slider--vertical {
+  display: block;
+}
+.announcement-bar__slider.announcement-bar__slider--vertical
+  .announcement-bar__slide {
+  height: auto;
+}
+.announcement-social-media {
+  height: 100%;
+  min-width: 180px;
+}
+.announcement-social-media.announcement-social-media--placeholder {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+.announcement-social-media .social-media {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  padding: 8px 0;
+}
+.announcement-social-media .social-media a {
+  display: flex;
+}
+.announcement-social-media .social-media svg {
+  width: 16px;
+  height: 16px;
+}
+.announcement-bar__text-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+@media (max-width: 959px) {
+  .announcement-bar__text-wrapper {
+    gap: 20px;
+  }
+}
+.announcement-bar__text-wrapper > button {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: currentColor;
+}
+.announcement-bar__text-wrapper > button:first-child {
+  transform: rotate(90deg);
+}
+.announcement-bar__text-wrapper > button:last-child {
+  transform: rotate(-90deg);
+}
+/* The ipad end responds to the mobile end in vertical screen */
+/* @custom-media --tablet (max-width: 959px); */
+/* @custom-media --gt-mobile (min-width: 751px); */
+/* detectingScreen need to consider the configuration of the tablet */

@@ -1,0 +1,49 @@
+{{#comment}}
+  Renders a list of product's price (regular, sale)
+
+  Accepts:
+  - product: {Object} Product Item object (optional)
+  - use_variant: {Boolean} Renders selected or first variant price instead of overall product pricing (optional)
+  - price_class: {String} Adds a price class to the price element (optional)
+
+  Usage:
+  {{ snippet 'price' product=product }}
+{{/comment}}
+
+
+
+{{#if use_variant}}
+  {{assign "target" (default product.selected_or_first_available_variant (first product.variants))}}
+{{else}}
+  {{assign "target" product}}
+{{/if}}
+
+{{assign "compare_at_price" target.compare_at_price}}
+{{assign "price" (default target.price 1999)}}
+{{assign "money_price" (money_with_currency price)}}
+{{assign 'money_price_min' (money_with_currency product.price_min)}}
+{{assign 'money_price_max' (money_with_currency product.price_max)}}
+
+<div class="price {{price_class}} ">
+  <div class="price__container">
+    {{#if product.quantity_price_breaks_configured}}
+      <div class="price__regular">
+        <span class="body2 fw-bold price-item price-item--regular">{{ money_price_min }} - {{ money_price_max }}</span>
+      </div>
+    {{else}}
+      {{#if compare_at_price > price}}
+        <div class="price__sale">
+          <span class="body2 fw-bold price-item price-item--sale">
+            {{money_price}}
+          </span>
+
+          <span class="body5 fw-bold price-item--regular">{{money_with_currency compare_at_price}}</span>
+        </div>
+      {{else}}
+        <div class="price__regular">
+          <span class="body2 fw-bold price-item price-item--regular">{{money_price}}</span>
+        </div>
+      {{/if}}
+    {{/if}}
+  </div>
+</div>

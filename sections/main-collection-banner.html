@@ -1,0 +1,113 @@
+{{snippet "stylesheet" href=(asset_url "section-collections-hero.css")}}
+
+{{assign "pc_cover_image" collection.banner_image}}
+{{assign
+  "mobile_cover_image"
+  (ternary (if section.settings.banner_image_mobile) section.settings.banner_image_mobile pc_cover_image)
+}}
+
+{{assign "has_pc_cover" false}}
+{{assign "has_mobile_cover" false}}
+
+{{#if section.settings.show_collection_cover}}
+  {{#if pc_cover_image}}
+    {{assign "has_pc_cover" true}}
+  {{/if}}
+  {{#if mobile_cover_image}}
+    {{assign "has_mobile_cover" true}}
+  {{/if}}
+{{/if}}
+
+{{#if has_pc_cover or has_mobile_cover}}
+  <div
+    class="collection-hero display-flex has-collection-image
+      {{#if (not has_pc_cover)}}display-none-desktop{{/if}}
+      {{#if (not has_mobile_cover)}}display-none-tablet{{/if}}"
+  >
+    <div class="collection-hero__image-wrapper">
+      {{#if collection.title}}
+        <div class="collection-hero__inner">
+          <div class="page-width collection-hero__text-wrapper">
+            <h1 class="title4 collection-hero__title">
+              {{collection.title}}
+            </h1>
+          </div>
+        </div>
+      {{/if}}
+
+      {{#if has_mobile_cover}}
+        {{image_tag
+          (image_url mobile_cover_image width=3840)
+          sizes="100vw"
+          class="collection-hero__image display-none-desktop"
+          fetchpriority="high"
+        }}
+      {{/if}}
+
+      {{#if has_pc_cover}}
+        {{image_tag
+          (image_url pc_cover_image width=3840)
+          sizes="100vw"
+          class="collection-hero__image display-none-tablet"
+          fetchpriority="high"
+        }}
+      {{/if}}
+    </div>
+
+    {{#if section.settings.show_collection_description and collection.description}}
+      <div class="page-width collection-hero__description body3 rte">
+        {{{collection.description}}}
+      </div>
+    {{/if}}
+  </div>
+{{/if}}
+
+{{#if (not has_pc_cover) or (not has_mobile_cover)}}
+  <div
+    class="collection-hero display-flex page-width
+      {{#if has_pc_cover}}display-none-desktop{{/if}}
+      {{#if has_mobile_cover}}display-none-tablet{{/if}}"
+  >
+    
+    <h1 class="title4 collection-hero__title">
+      {{default collection.title (t "products.product_list.products")}}
+    </h1>
+
+    {{#if section.settings.show_collection_description and collection.description}}
+      <div class="collection-hero__description body3 rte">{{{collection.description}}}</div>
+    {{/if}}
+  </div>
+{{/if}}
+
+{{#schema}}
+{
+  "name": "t:sections.main-collection-banner.name",
+  "class": "section",
+  "settings": [
+    {
+      "type": "switch",
+      "id": "show_collection_description",
+      "label": "t:sections.main-collection-banner.settings.show_collection_description.label",
+      "default": true
+    },
+    {
+      "type": "switch",
+      "id": "show_collection_cover",
+      "label": "t:sections.main-collection-banner.settings.show_collection_cover.label",
+      "info": "t:sections.main-collection-banner.settings.show_collection_cover.info",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image_mobile",
+      "label": "t:sections.main-collection-banner.settings.banner_image_mobile.label"
+    }
+  ],
+  "default": {
+    "settings": {
+      "show_collection_description": true,
+      "show_collection_cover": true
+    }
+  }
+}
+{{/schema}}

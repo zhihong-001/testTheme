@@ -1,0 +1,43 @@
+<product-form class="product-form" data-default-error-message="{{t 'products.general.no_product_data_found'}}">
+  <div class="product-form__error-message-wrapper" hidden>
+    {{snippet "icon-error"}}
+    <span class="product-form__error-message body6"></span>
+  </div>
+  {{#unless product}}
+    <button class="product-form__submit button button--full-width button--secondary" disabled>
+      <span>
+        {{t "products.general.sold_out"}}
+      </span>
+    </button>
+  {{/unless}}
+  {{#form "product" product id=product_form_id}}
+    <input
+      type="hidden"
+      name="id"
+      value="{{default product.selected_or_first_available_variant.id (get 'id' (first product.variants))}}"
+      disabled
+    />
+    <div class="product-form__buttons">
+      <button
+        id="{{product_form_id}}-submit"
+        type="submit"
+        name="add"
+        class="product-form__submit button button--full-width button--secondary"
+        {{#unless product.selected_or_first_available_variant.available}}
+          disabled
+        {{/unless}}
+      >
+        <span>
+          {{#if product.selected_or_first_available_variant.available}}
+            {{t "products.product_list.add_to_cart"}}
+          {{else}}
+            {{t "products.general.sold_out"}}
+          {{/if}}
+        </span>
+        {{snippet "loading-overlay-spinner"}}
+      </button>
+
+      {{payment_button}}
+    </div>
+  {{/form}}
+</product-form>

@@ -1,0 +1,21 @@
+<div class="slider-buttons {{#if hide_mobile_slider }} small-hide{{/if}} {{classes}}">
+  <button
+    type="button"
+    class="slider-button slider-button--prev"
+    name="previous"
+  >
+    {{snippet "icon-arrow"}}
+  </button>
+  <div class="slider-counter caption">
+    <span class="slider-counter--current">1</span>
+    <span> / </span>
+    <span class="slider-counter--total">{{ media_count }}</span>
+  </div>
+  <button
+    type="button"
+    class="slider-button slider-button--next"
+    name="next"
+  >
+    {{snippet "icon-arrow"}}
+  </button>
+</div>

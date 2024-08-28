@@ -1,0 +1,52 @@
+{{#comment}}
+    Renders a set of links for paginated results. Must be used within paginate tags.
+
+    Usage:
+    {{#paginate results by=2 total=100}}
+      {{ paginate.items }}
+    {{/paginate}}
+
+    Accepts:
+    - paginate: {Object}
+    - anchor: {String} (optional) This can be added so that on page reload it takes you to wherever you've placed your anchor tag.
+{{/comment}}
+{{snippet "stylesheet" href=(asset_url "component-pagination.css") lazy=true}}
+
+<div class="pagination-wrapper">
+  <nav class="pagination">
+    <ul class="pagination__list list-unstyled">
+      <li>
+        <a
+          href="{{paginate.previous.url}}{{anchor}}"
+          class="pagination__item pagination__item--next pagination__item-arrow motion-reduce
+            {{#unless paginate.previous}}pagination__item--disible{{/unless}}"
+        >
+          {{snippet "icon-arrow"}}
+        </a>
+      </li>
+
+      <li class="pagination__num--container body3">{{paginate.current_page}}/{{paginate.pages}}</li>
+
+      <li>
+        <a
+          href="{{paginate.next.url}}{{anchor}}"
+          class="pagination__item pagination__item--prev pagination__item-arrow motion-reduce
+            {{#unless paginate.next}}pagination__item--disible{{/unless}}"
+        >
+          {{snippet "icon-arrow"}}
+        </a>
+      </li>
+    </ul>
+
+    {{assign "last_current_offset" (add paginate.current_offset paginate.page_size)}}
+    {{#if paginate.current_page == paginate.pages}}{{assign "last_current_offset" paginate.items}} {{/if}}
+    <div class="pagination-info body4">
+      {{t
+        "products.product_list.load_more_desc"
+        current_offset=(add paginate.current_offset 1)
+        last_current_offset=last_current_offset
+        total=paginate.items
+      }}
+    </div>
+  </nav>
+</div>

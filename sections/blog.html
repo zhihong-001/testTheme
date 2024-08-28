@@ -1,0 +1,201 @@
+{{snippet "stylesheet" href=(asset_url "component-blog.css")}}
+{{snippet "stylesheet" href=(asset_url "section-blog.css")}}
+{{snippet
+  "section-padding-creator"
+  section_id=section.id
+  padding_top=section.settings.padding_top
+  padding_bottom=section.settings.padding_bottom
+}}
+
+{{assign "blog_collection" section.settings.blog_collection}}
+<div class="section section-padding color-scheme-{{section.settings.color_scheme}}">
+  <div class="blogs__main page-width">
+    <div class="blogs__head {{#unless section.settings.title}}blogs__head--no-title{{/unless}}">
+      {{#if section.settings.title}}
+        <h2 class="blogs__title word-break title3">
+          {{section.settings.title}}
+        </h2>
+      {{/if}}
+    </div>
+    <div class="blogs__list-wrapper">
+      <ul class="grid grid-cols-{{default section.settings.pc_cols '3'}}-desktop blogs__list">
+        {{#if blog_collection.articles.length}}
+          {{#for blog_collection.articles limit=section.settings.limit as |article|}}
+            <li class="blogs__item hover-image-scale" {{{article.shopline_attributes}}}>
+              {{snippet
+                "blog-card"
+                placeholder=false
+                info=article
+                show_author=section.settings.is_show_author
+                show_date=section.settings.is_show_date
+                show_cover=section.settings.is_show_cover
+                cover_ratio="medium"
+                show_desc=section.settings.is_show_desc
+              }}
+            </li>
+          {{/for}}
+        {{else}}
+          <li class="blogs__item hover-image-scale" {{{shopline_attributes}}}>
+            {{snippet
+              "blog-card"
+              placeholder=true
+              info=this
+              show_author=section.settings.is_show_author
+              show_date=section.settings.is_show_date
+              show_cover=section.settings.is_show_cover
+              cover_ratio="medium"
+              show_desc=section.settings.is_show_desc
+            }}
+          </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+  {{#if (isTruthy section.settings.btn_text)}}
+    <div class="stage-blogs-btn">
+      {{assign "ele" (ternary (if blog_collection.url) "a" "span")}}
+      <{{ele}} class="button" {{#if blog_collection.url}}href="{{blog_collection.url}}"{{/if}}>
+        {{section.settings.btn_text}}
+      </{{ele}}>
+    </div>
+  {{/if}}
+</div>
+
+{{#schema}}
+{
+  "name": "t:sections.blog.name",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.blog.settings.title.label",
+      "default": "Blog"
+    },
+    {
+      "type": "blog",
+      "id": "blog_collection",
+      "label": "t:sections.blog.settings.blog_collection.label"
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "t:sections.blog.settings.limit.label",
+      "default": 3,
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "unit": "t:sections.blog.settings.limit.unit"
+    },
+    {
+      "id": "pc_cols",
+      "type": "range",
+      "label": "t:sections.blog.settings.pc_cols.label",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "switch",
+      "id": "is_show_date",
+      "default": true,
+      "label": "t:sections.blog.settings.is_show_date.label"
+    },
+    {
+      "type": "switch",
+      "id": "is_show_author",
+      "default": true,
+      "label": "t:sections.blog.settings.is_show_author.label"
+    },
+    {
+      "type": "switch",
+      "id": "is_show_cover",
+      "default": true,
+      "label": "t:sections.blog.settings.is_show_cover.label"
+    },
+    {
+      "type": "switch",
+      "id": "is_show_desc",
+      "default": true,
+      "label": "t:sections.blog.settings.is_show_desc.label"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "default": "View all",
+      "label": "t:sections.blog.settings.btn_text.label"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "t:sections.blog.settings.color_scheme.label",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.blog.settings.color_scheme.options__0.label"
+        },
+        {
+          "value": "1",
+          "label": "t:sections.blog.settings.color_scheme.options__1.label"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.blog.settings.color_scheme.options__2.label"
+        },
+        {
+          "value": "3",
+          "label": "t:sections.blog.settings.color_scheme.options__3.label"
+        }
+      ]
+    },
+    {
+      "type": "group_header",
+      "label": "t:sections.blog.settings.group_header__0.label"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "t:sections.blog.settings.padding_top.label",
+      "default": 80,
+      "max": 100,
+      "min": 0,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "t:sections.blog.settings.padding_bottom.label",
+      "default": 80,
+      "max": 100,
+      "min": 0,
+      "step": 2,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "category_index": 5,
+      "category": "t:sections.blog.presets.presets__0.category",
+      "name": "t:sections.blog.presets.presets__0.name",
+      "settings": {
+        "title": "Blogs",
+        "blog_collection": "",
+        "limit": 3,
+        "pc_cols": 3,
+        "is_show_date": true,
+        "is_show_author": true,
+        "is_show_cover": true,
+        "is_show_desc": true,
+        "btn_text": "View all",
+        "color_scheme": "none",
+        "cover_img_ratio": "0.75",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  ]
+}
+{{/schema}}

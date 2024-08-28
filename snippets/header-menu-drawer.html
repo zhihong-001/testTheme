@@ -1,0 +1,117 @@
+{{#comment}}
+     Render header tools
+
+    Accepts:
+    - show_user_entry: {Boolean}
+    - menu: {Object} Linklist object
+    - class: {String} Custom classes
+
+    Usage:
+    {{snippet
+      "header-menu-drawer"
+      show_user_entry=section.settings.show_user_entry
+      menu=menu
+      class="display-none-tablet header__drawer-nav"
+    }}
+{{/comment}}
+
+{{assign "class_string" (append "header__menu-drawer " class)}}
+
+<header-modal class="drawer {{class_string}}">
+  <details>
+    <summary class="modal__toggle">
+      <button class="icon-button header__icon-button">
+        {{snippet "icon-menu"}}
+      </button>
+    </summary>
+
+    <div class="modal__content global-drawer-border-shadow" data-position="left">
+      <div class="modal__overlay"></div>
+
+      <div class="drawer__head drawer__head--divider">
+        <h5 class="drawer__title">
+          {{#if show_user_entry}}
+            <a
+              class="header__user-center-button body3 fw-bold"
+              href="{{#if customer}}{{routes.account_url}}{{else}}{{routes.account_login_url}}{{/if}}"
+            >
+              {{snippet "icon-user"}}
+              {{#not customer}}{{t "general.header.login"}}{{/not}}
+            </a>
+          {{/if}}
+        </h5>
+        <button class="drawer__close-button icon-button" name="close">
+          {{snippet "icon-close"}}
+        </button>
+      </div>
+
+      <div class="drawer__main">
+        <accordion-component>
+          <nav class="header__drawer-nav">
+            <ul class="header__drawer-menus list-unstyled">
+              {{#for menu.links as |link|}}
+                {{#if (length link.links) > 0}}
+                  <li>
+                    <details>
+                      <summary class="drawer-menus__item body3 fw-bold">
+                        {{link.title}}
+                        <span class="drawer-menus__item-icon drawer-menus__item-icon-on">
+                          {{snippet "icon-arrow"}}
+                        </span>
+                        <span class="drawer-menus__item-icon drawer-menus__item-icon-off">
+                          {{snippet "icon-minus"}}
+                        </span>
+                      </summary>
+                      <ul class="drawer-menus__sub-menus list-unstyled">
+                        {{#for link.links as |link|}}
+                          {{#if (length link.links) > 0}}
+                            <details>
+                              <summary class="drawer-menus__sub-item body5">
+                                {{link.title}}
+                                <span class="drawer-menus__item-icon drawer-menus__item-icon-on">
+                                  {{snippet "icon-arrow"}}
+                                </span>
+                                <span class="drawer-menus__item-icon drawer-menus__item-icon-off">
+                                  {{snippet "icon-minus"}}
+                                </span>
+                              </summary>
+                              <ul class="drawer-menus__sub-menus list-unstyled">
+                                {{#for link.links as |link|}}
+                                  <li>
+                                    <a
+                                      class="drawer-menus__sub-item body5"
+                                      {{#if link.url}}href="{{link.url}}"{{else}}href="javascript:;" role="link"{{/if}}
+                                    >{{link.title}}</a>
+                                  </li>
+                                {{/for}}
+                              </ul>
+                            </details>
+                          {{else}}
+                            <li>
+                              <a
+                                class="drawer-menus__sub-item body5"
+                                {{#if link.url}}href="{{link.url}}"{{else}}href="javascript:;" role="link"{{/if}}
+                              >{{link.title}}</a>
+                            </li>
+                          {{/if}}
+                        {{/for}}
+                      </ul>
+                    </details>
+                  </li>
+                {{else}}
+                  <li>
+                    <a
+                      class="drawer-menus__item body3 fw-bold"
+                      {{#if link.url}}href="{{link.url}}"{{else}}href="javascript:;" role="link"{{/if}}
+                    >{{link.title}}</a>
+                  </li>
+                {{/if}}
+              {{/for}}
+            </ul>
+          </nav>
+        </accordion-component>
+      </div>
+
+    </div>
+  </details>
+</header-modal>

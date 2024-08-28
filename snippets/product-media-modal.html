@@ -1,0 +1,40 @@
+
+
+
+<product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
+  <div
+    class="product-media-modal__dialog"
+    tabindex="-1"
+  >
+    <button id="ModalClose-{{ section.id }}" type="button" class="product-media-modal__toggle">
+      {{snippet 'icon-close'}}
+    </button>
+
+    <div
+      class="product-media-modal__content"
+      role="document"
+      tabindex="0"
+    >
+      {{#if product.selected_or_first_available_variant.featured_media}}
+        {{assign 'media' product.selected_or_first_available_variant.featured_media}}
+        {{snippet 'product-media' section=section media=media loop=section.settings.video_loop image_quality=image_quality}}
+      {{/if}}
+
+      {{#for product.media as |media|}}
+        {{assign 'variant_image' false}}
+
+        {{#if variant_images contains media.src}}
+          {{assign 'variant_image' true}}
+        {{/if}}
+
+        {{#if variant_images contains media.id}}
+          {{assign 'variant_image' true}}
+        {{/if}}
+
+        {{#unless (if media.id == product.selected_or_first_available_variant.featured_media.id)}}
+          {{snippet 'product-media' section=section media=media loop=section.settings.video_loop variant_image=variant_image image_quality=image_quality}}
+        {{/unless}}
+      {{/for}}
+    </div>
+  </div>
+</product-modal>

@@ -1,0 +1,270 @@
+{
+  "sections": {
+    "main-product-info": {
+      "type": "main-product",
+      "disabled": false,
+      "settings": {
+        "product_info_sticky": true,
+        "product_image_pc_position": "left",
+        "product_image_pc_show_style": "flatten",
+        "product_image_size": "large",
+        "product_mobile_thumbnail_image_hide": "columns",
+        "video_loop": false,
+        "padding_top": 80,
+        "padding_bottom": 80
+      },
+      "blocks": {
+        "block_title": {
+          "type": "title",
+          "settings": {}
+        },
+        "block_price": {
+          "type": "price",
+          "settings": {}
+        },
+        "block_product_info": {
+          "type": "product-sell-info",
+          "settings": {
+            "product_sales_point_1_icon": "globe",
+            "product_sales_point_1": "Free worldwide shipping",
+            "product_sales_point_2_icon": "checkmark",
+            "product_sales_point_2": "Free returns",
+            "product_sales_point_3_icon": "leaf",
+            "product_sales_point_3": "Carbon neutral",
+            "product_sales_point_4_icon": "lock",
+            "product_sales_point_4": "Secure payments"
+          }
+        },
+        "block_variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "flatten"
+          }
+        },
+        "block_quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "block_buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {}
+        },
+        "block_description": {
+          "type": "description",
+          "settings": {}
+        },
+        "block_share": {
+          "type": "share",
+          "settings": {}
+        },
+        "block_product_additional": {
+          "type": "product_additional",
+          "settings": {
+            "title": "Example title",
+            "description": "",
+            "enabled_fold": true
+          }
+        }
+      },
+      "block_order": [
+        "block_title",
+        "block_price",
+        "block_product_info",
+        "block_variant_picker",
+        "block_quantity_selector",
+        "block_buy_buttons",
+        "block_description",
+        "block_share",
+        "block_product_additional"
+      ]
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": false,
+      "settings": {
+        "show_product_number": 6,
+        "pc_cols": 4,
+        "md_cols": 2,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "product_image_ratio": "150",
+        "product_fill_type": "contain",
+        "product_hover_show_next": true,
+        "notice_style": ""
+      },
+      "blocks": {}
+    },
+    "1713926351895b8a92f9": {
+      "type": "shopline://apps/高阶组件库（预发）/sections/file-list/9512fe25-92d0-4556-a39f-48aac4d5ca04",
+      "disabled": false,
+      "settings": {
+        "title": "Download",
+        "title_align": "center",
+        "desc": "Add your own custom content to give more information about your store, availability details...",
+        "type_style": "pic",
+        "pc_show": true,
+        "mb_show": true,
+        "container_max_width": 1420,
+        "container_config": {
+          "pc": {
+            "left": 40,
+            "right": 40,
+            "top": 60,
+            "bottom": 60
+          },
+          "mobile": {
+            "left": 20,
+            "right": 20,
+            "top": 40,
+            "bottom": 40
+          }
+        },
+        "container_margin_config": {
+          "pc": {
+            "left": 0,
+            "right": 0,
+            "top": 0,
+            "bottom": 0
+          },
+          "mobile": {
+            "left": 0,
+            "right": 0,
+            "top": 0,
+            "bottom": 0
+          }
+        },
+        "title_font_family": "Poppins:600",
+        "title_font_color": "#000000",
+        "title_pc_font_size": 32,
+        "title_m_font_size": 24,
+        "title_letter_spacing": 0,
+        "title_line_height": 1.2,
+        "sub_title_font_family": "Montserrat:400",
+        "sub_title_font_color": "#000000",
+        "sub_title_pc_font_size": 16,
+        "sub_title_m_font_size": 14,
+        "sub_title_letter_spacing": 0,
+        "sub_title_line_height": 1.6,
+        "body_font_family": "Montserrat:400",
+        "body_font_color": "#000000",
+        "body_pc_font_size": 18,
+        "body_m_font_size": 14,
+        "body_letter_spacing": 0,
+        "body_line_height": 1.6,
+        "container_bg_color": "#FFFFFF"
+      },
+      "blocks": {
+        "171392635189537cd57e": {
+          "type": "file-link",
+          "icon": "comment",
+          "settings": {
+            "file": {
+              "url": "https://cdn-files.myshopline.com/file/store/1624538086300/printflow.pdf",
+              "filename": "printflow.pdf"
+            },
+            "description": "Download file",
+            "file_bg": "shopline://shop_images/asd_-12}'asd.jpeg"
+          },
+          "blockId": "171392635189537cd57e"
+        },
+        "1713926351895251f531": {
+          "type": "file-link",
+          "icon": "comment",
+          "settings": {
+            "file": "{{product.metafields.my_fields.prod-file.value}}",
+            "description": "Download file",
+            "file_bg": "{{product.metafields.my_fields.wrqwe.value}}"
+          },
+          "blockId": "1713926351895251f531"
+        },
+        "17139263518950b105c4": {
+          "type": "file-link",
+          "icon": "comment",
+          "settings": {
+            "file": "",
+            "description": "Download file",
+            "file_bg": "{{product.metafields.my_fields.wrqwe.value}}"
+          },
+          "blockId": "17139263518950b105c4"
+        }
+      },
+      "block_order": [
+        "171392635189537cd57e",
+        "1713926351895251f531",
+        "17139263518950b105c4"
+      ],
+      "custom_css": []
+    },
+    "1716358917880ed3c408": {
+      "disabled": false,
+      "type": "collapsible-content",
+      "settings": {
+        "heading": "Collapsible content",
+        "heading_size": "title3",
+        "heading_alignment": "center",
+        "color_scheme": "none",
+        "open_first_collapsible_row": true,
+        "image": "shopline://shop_images/4_62d4b736-6b67-45ba-9ffe-0c9f65f4374d.jpg",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 80,
+        "padding_bottom": 80
+      },
+      "blocks": {
+        "1716358917880663351e": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row 111",
+            "icon": "check_mark",
+            "row_content": "<div class=\"ant-drawer-header\">\n<div class=\"ant-drawer-header-title\">\n<div class=\"ant-drawer-title\">\n<div class=\"ToolBarDrawer_drawerHeader__u3eo8\">&lt;p&gt;&lt;strong&gt;1.Skin cleansing&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt; &lt;p&gt;Tea Tree, Lemon, Juniper Berry, Lavender, Geranium, Cedarwood&lt;/p&gt; &lt;p&gt;Dilute 2 drops of essential oil with coconut oil and massage the facial skin for 1-2 minutes. Wash it off with warm water or facial cleanser. Focus on massaging the nose area to help with deep cleansing and eliminate acne and blackheads.&lt;/p&gt; &lt;p&gt;&amp;nbsp;&lt;/p&gt; &lt;strong&gt;2.Moisturizing and moisturizing&lt;/strong&gt;&lt;br&gt;&lt;br&gt; &lt;p&gt;Patchouli, Roman Chamomile, Geranium, Sandalwood, Lavender, Myrrh, Frankincense&lt;/p&gt; &lt;p&gt;Dilute coconut oil and use it as an essence, apply it directly to the skin in the morning and evening and massage gently for absorption, or add 1-2 drops each to cream.&lt;/p&gt; &lt;p&gt;&amp;nbsp;&lt;/p&gt;</div>\n</div>\n</div>\n</div>",
+            "page": ""
+          },
+          "blockId": "1716358917880663351e"
+        },
+        "1716358917880465a682": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          },
+          "blockId": "1716358917880465a682"
+        },
+        "17163589178804d7f476": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          },
+          "blockId": "17163589178804d7f476"
+        },
+        "1716358917880ab2e70e": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          },
+          "blockId": "1716358917880ab2e70e"
+        }
+      },
+      "block_order": [
+        "1716358917880663351e",
+        "1716358917880465a682",
+        "17163589178804d7f476",
+        "1716358917880ab2e70e"
+      ],
+      "custom_css": []
+    }
+  },
+  "order": [
+    "main-product-info",
+    "product-recommendations",
+    "1713926351895b8a92f9",
+    "1716358917880ed3c408"
+  ]
+}

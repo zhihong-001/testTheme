@@ -1,0 +1,24 @@
+.price {
+  display: inline-block;
+  color: rgb(var(--color-sale));
+}
+.price .price__sale .price-item--regular {
+  text-decoration: line-through;
+  color: rgb(var(--color-light-text));
+}
+.price .price__sale {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.price .price-item--sale {
+  margin-right: 6px;
+}
+.price > * {
+  display: inline-block;
+  vertical-align: top;
+}
+/* The ipad end responds to the mobile end in vertical screen */
+/* @custom-media --tablet (max-width: 959px); */
+/* @custom-media --gt-mobile (min-width: 751px); */
+/* detectingScreen need to consider the configuration of the tablet */

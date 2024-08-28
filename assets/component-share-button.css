@@ -1,0 +1,74 @@
+.share-button__container details {
+  position: relative;
+}
+
+.share-button__button {
+  display: flex;
+  align-items: center;
+}
+
+.share-button__button svg {
+  margin-right: 2px;
+}
+
+.share-button__fallback {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 44px;
+  left: 0;
+  z-index: 3;
+  padding: 60px 40px 40px 40px;
+  box-shadow: 0px 0px 40px rgba(var(--color-text), 0.1);
+  background-color: rgba(var(--color-page-background));
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-width: 250px;
+  max-width: 650px;
+}
+
+.share-button__link {
+  margin-bottom: 20px;
+}
+
+.share-button__copy,
+.share-button__copy-succuess {
+  width: 100%;
+  height: 51px;
+}
+
+.share-button__copy-succuess svg {
+  width: 20px;
+  height: 20px;
+}
+
+.share-button__close {
+  position: absolute;
+  right: 11px;
+  top: 11px;
+  background: transparent;
+  border: 1px solid rgba(var(--color-text), 0.05);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: rgb(var(--color-text));
+}
+
+.share-button__close .icon-close {
+  width: 10px;
+  height: 10px;
+}
+
+/* The ipad end responds to the mobile end in vertical screen */
+
+/* @custom-media --tablet (max-width: 959px); */
+
+/* @custom-media --gt-mobile (min-width: 751px); */
+
+/* detectingScreen need to consider the configuration of the tablet */

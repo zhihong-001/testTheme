@@ -1,0 +1,130 @@
+{{assign "variant_strings_addToCart" (t "products.product_list.add_to_cart")}}
+{{assign "variant_strings_soldOut" (t "products.general.sold_out")}}
+{{assign "variant_strings_unavailable" (t "products.general.unavailable")}}
+{{#capture "section_template"}}{{ternary template.directory (append template.directory "/") ""}}{{template.name}}{{ternary template.suffix (append "." template.suffix) ""}}{{/capture}}
+
+
+{{#if block.settings.picker_type == "flatten"}}
+  <variant-radios
+    data-section="{{section.id}}"
+    data-url="{{product.url}}"
+    data-update-url="{{default update_url true}}"
+    data-section-template="{{section_template}}"
+  >
+    {{#for product.options_with_values as |option|}}
+      <fieldset class="product-form__input">
+        <legend class="form__label body3 fw-bold">{{option.name}}</legend>
+        {{assign "variant_index" (append '' forloop.index0)}}
+        {{#for option.values_images as |item|}}
+          <input
+            type="radio"
+            id="{{section.id}}-{{option.position}}-{{forloop.index0}}"
+            name="{{option.name}}"
+            value="{{item.value}}"
+            form="{{product_form_id}}"
+            {{#if
+              product.selected_or_first_available_variant
+              and
+              (if
+                (get
+                  variant_index
+                  product.selected_or_first_available_variant.options
+                )
+                ==
+                item.value
+              )
+            }}
+              checked
+            {{else if (isFalsey product.available) and (eq forloop.index0 0)}}
+              
+              checked
+            {{/if}}
+          />
+          <label class="body3 {{#if item.image}}variant-image__wrapper{{/if}}" for="{{section.id}}-{{option.position}}-{{forloop.index0}}">
+            {{#if item.image}}
+              <tool-tip class="display-none-tablet" tip-position="top">{{item.value}}</tool-tip>
+              {{snippet "image" class="variant-image__image" data=item.image}}
+            {{else}}
+              {{item.value}}
+            {{/if}}
+          </label>
+        {{/for}}
+      </fieldset>
+    {{/for}}
+
+    <script class="variant-data" type="application/json">
+      {{{json product.variants}}}
+    </script>
+    <script class="variant-strings" type="application/json">
+      {
+        "addToCart": "{{{variant_strings_addToCart}}}",
+        "soldOut": "{{{variant_strings_soldOut}}}",
+        "unavailable": "{{{variant_strings_unavailable}}}"
+      }
+    </script>
+  </variant-radios>
+{{else}}
+  <variant-selects
+    data-section="{{section.id}}"
+    data-url="{{product.url}}"
+    data-update-url="{{default update_url true}}"
+    data-section-template="{{section_template}}"
+  >
+    {{#for product.options_with_values as |option|}}
+      <div>
+        <label class="form__label body3 fw-bold" for="Option-{{section.id}}-{{forloop.index0}}">
+          {{option.name}}
+        </label>
+        <div class="field">
+          <select
+            id="Option-{{section.id}}-{{forloop.index0}}"
+            class="field__input--classic"
+            name="options[{{option.name}}]"
+            form="{{product_form_id}}"
+          >
+            {{assign "variant_index" (append '' forloop.index0)}}
+            {{#for option.values as |value|}}
+              <option
+                class="body3"
+                value="{{value}}"
+                {{#if
+                  product.selected_or_first_available_variant
+                  and
+                  (if
+                    (get
+                      variant_index
+                      product.selected_or_first_available_variant.options
+                    )
+                    ==
+                    value
+                  )
+                }}
+                  selected="selected"
+                {{else if (isFalsey product.available) and (eq forloop.index0 0)}}
+                  
+                  selected="selected"
+                {{/if}}
+              >
+                {{value}}
+              </option>
+            {{/for}}
+          </select>
+          <div class="field__suffix">
+            {{snippet "icon-arrow"}}
+          </div>
+        </div>
+      </div>
+    {{/for}}
+
+    <script class="variant-data" type="application/json">
+      {{{json product.variants}}}
+    </script>
+    <script class="variant-strings" type="application/json">
+      {
+        "addToCart": "{{{variant_strings_addToCart}}}",
+        "soldOut": "{{{variant_strings_soldOut}}}",
+        "unavailable": "{{{variant_strings_unavailable}}}"
+      }
+    </script>
+  </variant-selects>
+{{/if}}

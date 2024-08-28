@@ -1,0 +1,61 @@
+{{#comment}}
+     Render header tools
+
+    Accepts:
+    - show_search_entry: {Boolean}
+
+    Usage:
+    {{snippet
+      "header-tools"
+      show_search_entry=section.settings.show_search_entry
+    }}
+{{/comment}}
+
+<div class="header__tools">
+  {{#if show_search_entry}}
+    <header-modal class="header__search">
+      <details>
+        <summary class="modal__toggle">
+          <button class="icon-button header__icon-button">
+            {{snippet 'icon-search'}}
+          </button>
+        </summary>
+        <div class="modal__content">
+          <div class="modal__overlay"></div>
+          <predictive-search class="search-modal__content page-width">
+            <form action="{{ routes.search_url }}" method="get" class="search-modal__form search">
+              <div class="search-modal__field field">
+                <input
+                  id="Search-In-Modal-1"
+                  class="search-modal__input field__input body3"
+                  type="search"
+                  name="keyword"
+                  value=""
+                  placeholder="{{ t 'general.search.search' }}"
+                  maxlength="255"
+                  autocorrect="off"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                  autofocus
+                >
+                <label class="search-modal__field-label field__label body3" for="Search-In-Modal-1">{{ t 'general.search.search' }}</label>
+                <button class="search-modal__close-button icon-button header__icon-button" name="close">
+                  {{snippet 'icon-close'}}
+                </button>
+              </div>
+              <div class="predictive-search global-modal-border-shadow" tabindex="-1">
+                <div class="predictive-search__results" data-predictive-search></div>
+                <div class="predictive-search__loading-state">
+                  <span class="predictive-search__spinner">
+                    {{ snippet 'icon-loading' }}
+                  </span>
+                </div>
+              </div>
+            </form>
+          </predictive-search>
+        </div>
+      </details>
+    </header-modal>
+  {{/if}}
+</div>

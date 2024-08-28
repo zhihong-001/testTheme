@@ -1,0 +1,142 @@
+.pagination-wrapper {
+  margin-top: 40px;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid rgb(var(--color-entry-line));
+  padding: 8px 10px;
+}
+
+.pagination__item {
+  color: rgb(var(--color-text));
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0;
+  text-decoration: none;
+}
+
+.pagination__item:not(.pagination__item-arrow, .pagination__item--current) {
+  opacity: 0.5;
+}
+
+.pagination__item:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.pagination__num--container {
+  color: rgba(var(--color-text), #000);
+  text-align: center;
+  font-size: 16px;
+  line-height: 160%;
+  padding: 0 20px;
+}
+
+.pagination__item.pagination__item-arrow {
+  color: rgb(var(--color-button-text));
+  width: 24px;
+  height: 24px;
+}
+
+.pagination__item.pagination__item-arrow svg {
+  color: rgb(var(--color-button-background));
+}
+
+.pagination__item.pagination__item-arrow:hover {
+  color: rgb(var(--color-button-text));
+}
+
+a.pagination__item--current,
+a.pagination__item:hover {
+  opacity: 1;
+}
+
+.pagination__item--next .icon {
+  transform: rotate(90deg);
+}
+
+.pagination__item--next:hover .icon {
+  transform: rotate(90deg) scale(1.07);
+}
+
+.pagination__item--prev .icon {
+  margin-right: -2px;
+  transform: rotate(-90deg);
+}
+
+.pagination__item--prev:hover .icon {
+  transform: rotate(-90deg) scale(1.07);
+}
+
+.pagination__item-arrow:hover::after {
+  display: none;
+}
+
+.pagination-info {
+  color: var(--color-entry-line, #000);
+  text-align: center;
+  margin-top: 12px;
+}
+
+@media screen and (min-width: 960px) {
+  .pagination-wrapper {
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .pagination__list {
+    padding: 4px 5px;
+  }
+
+  .pagination-info {
+    margin-top: 6px;
+  }
+
+  .pagination__num--container {
+    padding: 0 16px;
+  }
+
+  .pagination__item {
+    height: 38px;
+    width: 38px;
+    font-size: 14px;
+  }
+}
+
+.pagination__item--disible {
+  pointer-events: none;
+}
+
+.pagination__item--disible:hover {
+  background-color: unset;
+}
+
+.pagination__item--disible .icon {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination__item--disible .icon:hover {
+  opacity: 0.5;
+}
+
+/* The ipad end responds to the mobile end in vertical screen */
+
+/* @custom-media --tablet (max-width: 959px); */
+
+/* @custom-media --gt-mobile (min-width: 751px); */
+
+/* detectingScreen need to consider the configuration of the tablet */
